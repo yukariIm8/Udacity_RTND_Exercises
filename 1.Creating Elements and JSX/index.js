@@ -1,29 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const people = [
-    { name: 'Tyler' },
-    { name: 'Karen' },
-    { name: 'Richard' }
-]
+class ContactList extends React.Component {
+    render() {
+        const people = [
+            { name: 'Tyler' },
+            { name: 'Karen' },
+            { name: 'Richard' }
+        ]
 
-/* Note: Add key prop is required.
-const element = React.createElement('ol', null,
-    people.map((person) => (
-        React.createElement('li', { key: person.name }, person.name)
-    ))
-)
-*/
 
-// Refactoring Version
-const element = <ol>
-    {people.map((person) => (
-        <li key={person.name}>{person.name}</li>
-    ))}
-</ol>
+        return <ol>
+            {people.map((person) => (
+                <li key={person.name}>{person.name}</li>
+            ))}
+        </ol>
+    }
+}
 
 
 ReactDOM.render(
-    element,
+    <ContactList />,
     document.getElementById('root')
 )
